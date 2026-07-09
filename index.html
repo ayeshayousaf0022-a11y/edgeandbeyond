@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edge & Beyond — Best Quality. Best Organised.</title>
+<meta name="description" content="Edge & Beyond — best quality, best organised leather bags.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --ink:#221a14;
+  --ink-soft:#4a3a2c;
+  --bg:#faf6f0;
+  --panel:#f2e9db;
+  --panel-2:#eadfcb;
+  --leather:#7a4b2a;
+  --leather-dark:#4a2f1c;
+  --leather-darker:#2d1d12;
+  --brass:#c6a15b;
+  --brass-soft:#e7d3ab;
+  --line: rgba(34,26,20,0.14);
+  --white:#fffdf9;
+  --shadow: 0 20px 50px rgba(45,29,18,0.16);
+  --radius: 2px;
+  --maxw: 1240px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Manrope',sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:500;margin:0;letter-spacing:-0.01em;}
+p{margin:0;line-height:1.6;}
+button{font-family:inherit;cursor:pointer;}
+.eyebrow{
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--leather);font-weight:700;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+.stitch{
+  height:1px;
+  background-image: repeating-linear-gradient(90deg, var(--line) 0 8px, transparent 8px 14px);
+  position:relative;
+}
+.stitch::before,.stitch::after{
+  content:"";position:absolute;top:-2px;width:5px;height:5px;border-radius:50%;background:var(--brass);
+}
+.stitch::before{left:0;}
+.stitch::after{right:0;}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px;}
+@media (prefers-reduced-motion: reduce){*{animation-duration:.01ms !important;transition-duration:.01ms !important;}}
+
+/* ============ NAV ============ */
+header.site{
+  position:sticky;top:0;z-index:60;
+  background:rgba(250,246,240,0.9);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 28px;max-width:var(--maxw);margin:0 auto;
+}
+.logo{
+  font-family:'Fraunces',serif;font-size:21px;letter-spacing:.02em;font-weight:600;
+  display:flex;align-items:baseline;gap:6px;
+}
+.logo em{font-style:italic;color:var(--leather);font-weight:400;}
+.navlinks{display:flex;gap:30px;align-items:center;}
+.navlinks button{
+  background:none;border:none;color:var(--ink-soft);font-size:13px;letter-spacing:.03em;
+  text-transform:uppercase;font-weight:600;padding:6px 0;border-bottom:1px solid transparent;
+}
+.navlinks button.active,.navlinks button:hover{color:var(--leather);border-color:var(--leather);}
+.navicons{display:flex;align-items:center;gap:18px;}
+.icon-btn{
+  position:relative;background:none;border:none;padding:6px;color:var(--ink);
+  display:flex;align-items:center;
+}
+.icon-btn svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.6;}
+.badge{
+  position:absolute;top:-2px;right:-4px;background:var(--leather);color:var(--white);
+  font-size:10px;font-weight:800;min-width:16px;height:16px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;padding:0 3px;
+}
+.hamburger{display:none;background:none;border:none;}
+.hamburger svg{width:24px;height:24px;stroke:var(--ink);fill:none;stroke-width:1.6;}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;min-height:88vh;display:flex;align-items:flex-end;
+  color:var(--white);overflow:hidden;
+}
+.hero img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;
+  z-index:0;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg, rgba(20,13,8,0.82) 0%, rgba(20,13,8,0.28) 48%, rgba(20,13,8,0.36) 100%);
+  z-index:1;
+}
+.hero-content{position:relative;z-index:2;padding:0 28px 64px;max-width:var(--maxw);margin:0 auto;width:100%;}
+.hero-content .eyebrow{color:var(--brass-soft);}
+.hero h1{
+  font-size:clamp(40px,7vw,84px);line-height:0.98;margin:14px 0 18px;max-width:820px;
+  font-weight:400;
+}
+.hero h1 em{font-style:italic;color:var(--brass-soft);font-weight:400;}
+.hero p.sub{max-width:480px;font-size:16px;color:rgba(255,253,249,0.86);margin-bottom:30px;}
+.btnrow{display:flex;gap:16px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:15px 30px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;
+  border:1px solid var(--leather);border-radius:var(--radius);transition:all .25s ease;
+}
+.btn-primary{background:var(--leather);color:var(--white);}
+.btn-primary:hover{background:var(--leather-dark);border-color:var(--leather-dark);}
+.btn-ghost{background:transparent;color:var(--white);border-color:rgba(255,253,249,0.6);}
+.btn-ghost:hover{background:rgba(255,253,249,0.12);border-color:var(--white);}
+.btn-dark{background:var(--ink);color:var(--white);border-color:var(--ink);}
+.btn-dark:hover{background:var(--leather-darker);}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink);}
+.btn-outline:hover{background:var(--ink);color:var(--white);}
+.btn:disabled{opacity:.5;cursor:not-allowed;}
+.btn.small{padding:10px 18px;font-size:11px;}
+.btn.full{width:100%;}
+
+/* ============ SECTIONS GENERIC ============ */
+.section{padding:100px 0;}
+.section.tight{padding:64px 0;}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;gap:20px;flex-wrap:wrap;}
+.section-head h2{font-size:clamp(28px,4vw,44px);}
+.section-head p{max-width:420px;color:var(--ink-soft);font-size:15px;}
+.bg-dark{background:var(--leather-darker);color:var(--brass-soft);}
+.bg-panel{background:var(--panel);}
+
+/* ============ CAROUSEL ============ */
+.carousel-outer{position:relative;}
+.carousel{
+  display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 26px;
+  scrollbar-width:thin;scrollbar-color:var(--leather) transparent;
+}
+.carousel::-webkit-scrollbar{height:5px;}
+.carousel::-webkit-scrollbar-thumb{background:var(--leather);border-radius:6px;}
+.card{
+  flex:0 0 280px;scroll-snap-align:start;background:var(--white);border:1px solid var(--line);
+  display:flex;flex-direction:column;position:relative;transition:box-shadow .3s ease, transform .3s ease;
+}
+.card:hover{box-shadow:var(--shadow);transform:translateY(-3px);}
+.card .imgwrap{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--panel);}
+.card .imgwrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+.card:hover .imgwrap img{transform:scale(1.05);}
+.wish-toggle{
+  position:absolute;top:10px;right:10px;background:rgba(255,253,249,0.9);border:none;border-radius:50%;
+  width:34px;height:34px;display:flex;align-items:center;justify-content:center;
+}
+.wish-toggle svg{width:17px;height:17px;stroke:var(--ink);fill:none;stroke-width:1.6;}
+.wish-toggle.active svg{fill:var(--leather);stroke:var(--leather);}
+.card .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1;}
+.card .name{font-family:'Fraunces',serif;font-size:18px;}
+.card .desc{font-size:12.5px;color:var(--ink-soft);}
+.card .pricerow{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:8px;}
+.card .price{font-weight:700;font-size:16px;}
+.card .cardbtns{display:flex;gap:8px;margin-top:10px;}
+.card .cardbtns .btn{flex:1;padding:10px 8px;font-size:10.5px;}
+
+/* ============ GALLERY ============ */
+.gallery-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:4px;
+}
+.gallery-grid .g-item{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--panel);cursor:zoom-in;}
+.gallery-grid .g-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+.gallery-grid .g-item:hover img{transform:scale(1.06);}
+.gallery-grid .g-item:first-child{grid-column:span 2;grid-row:span 2;}
+
+/* ============ FEATURES STRIP ============ */
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+.feature{background:var(--bg);padding:32px 26px;}
+.feature svg{width:26px;height:26px;stroke:var(--leather);fill:none;stroke-width:1.4;margin-bottom:14px;}
+.feature h4{font-size:15px;margin-bottom:6px;}
+.feature p{font-size:12.5px;color:var(--ink-soft);}
+
+/* ============ PROMO / GIFT BANNER ============ */
+.giftband{
+  background:linear-gradient(120deg,var(--leather-darker),var(--leather-dark));
+  color:var(--brass-soft);padding:44px 0;text-align:center;
+}
+.giftband .seal{
+  width:54px;height:54px;border-radius:50%;border:1.5px solid var(--brass);margin:0 auto 14px;
+  display:flex;align-items:center;justify-content:center;
+}
+.giftband .seal svg{width:24px;height:24px;stroke:var(--brass);fill:none;stroke-width:1.4;}
+.giftband h3{color:var(--white);font-size:24px;margin-bottom:8px;}
+.giftband p{max-width:520px;margin:0 auto;font-size:14px;color:rgba(231,211,171,0.85);}
+
+/* ============ FOOTER ============ */
+footer{background:var(--leather-darker);color:rgba(255,253,249,0.75);padding:64px 0 24px;}
+.footgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:30px;padding-bottom:40px;}
+.footgrid h5{color:var(--brass-soft);font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;}
+.footgrid .flogo{font-family:'Fraunces',serif;color:var(--white);font-size:20px;margin-bottom:12px;}
+.footgrid ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
+.footgrid a,.footgrid button{color:rgba(255,253,249,0.75);font-size:13.5px;background:none;border:none;padding:0;text-align:left;}
+.footgrid a:hover,.footgrid button:hover{color:var(--brass-soft);}
+.footbottom{
+  border-top:1px solid rgba(255,253,249,0.14);padding-top:22px;display:flex;justify-content:space-between;
+  font-size:12px;color:rgba(255,253,249,0.5);flex-wrap:wrap;gap:8px;
+}
+
+/* ============ PAGES (SPA sections) ============ */
+.page{display:none;}
+.page.active{display:block;}
+#home.page{display:block;}
+.pagehero{padding:70px 0 30px;text-align:center;}
+.pagehero .eyebrow{display:block;margin-bottom:10px;}
+.pagehero h1{font-size:clamp(30px,5vw,52px);}
+
+/* Info tabs */
+.tabbar{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:46px;}
+.tabbar button{
+  padding:10px 18px;border:1px solid var(--line);background:var(--white);font-size:12.5px;
+  letter-spacing:.03em;text-transform:uppercase;font-weight:700;color:var(--ink-soft);
+}
+.tabbar button.active{background:var(--leather);color:var(--white);border-color:var(--leather);}
+.tabpanel{display:none;max-width:760px;margin:0 auto;}
+.tabpanel.active{display:block;}
+.tabpanel h3{font-size:24px;margin-bottom:16px;}
+.tabpanel p{color:var(--ink-soft);margin-bottom:14px;font-size:15px;}
+.faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;font-size:15px;}
+.faq-q svg{width:16px;height:16px;stroke:var(--leather);fill:none;stroke-width:1.6;transition:transform .25s ease;}
+.faq-item.open .faq-q svg{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--ink-soft);font-size:14px;}
+.faq-item.open .faq-a{max-height:220px;padding-top:10px;}
+
+/* Forms */
+.form-card{max-width:560px;margin:0 auto;background:var(--white);border:1px solid var(--line);padding:36px;}
+.field{margin-bottom:18px;}
+.field label{display:block;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--ink-soft);margin-bottom:7px;}
+.field input,.field textarea,.field select{
+  width:100%;padding:13px 14px;border:1px solid var(--line);background:var(--bg);font-family:inherit;font-size:14.5px;color:var(--ink);
+}
+.field textarea{resize:vertical;min-height:100px;}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--leather);}
+.formrow{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.form-note{font-size:12px;color:var(--ink-soft);margin-top:14px;text-align:center;}
+.status-msg{font-size:13px;margin-top:14px;padding:10px 14px;display:none;}
+.status-msg.show{display:block;}
+.status-msg.ok{background:#e7f2e6;color:#2c5a2a;}
+.status-msg.err{background:#f5e4e0;color:#8a3626;}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;}
+.contact-info{padding-top:6px;}
+.contact-info .ci-row{display:flex;gap:14px;margin-bottom:22px;}
+.contact-info svg{width:20px;height:20px;stroke:var(--leather);fill:none;stroke-width:1.5;flex-shrink:0;}
+.contact-info h4{font-size:14px;margin-bottom:3px;}
+.contact-info p{font-size:13.5px;color:var(--ink-soft);}
+
+.track-result{max-width:560px;margin:26px auto 0;background:var(--panel);padding:24px 28px;display:none;}
+.track-result.show{display:block;}
+.track-steps{display:flex;justify-content:space-between;margin-top:18px;position:relative;}
+.track-steps::before{content:"";position:absolute;top:9px;left:0;right:0;height:1px;background:var(--line);}
+.tstep{position:relative;text-align:center;flex:1;}
+.tstep .dot{width:18px;height:18px;border-radius:50%;background:var(--white);border:1.5px solid var(--line);margin:0 auto 8px;position:relative;z-index:1;}
+.tstep.done .dot{background:var(--leather);border-color:var(--leather);}
+.tstep span{font-size:10.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;}
+
+/* ============ DRAWERS / MODALS ============ */
+.overlay{
+  position:fixed;inset:0;background:rgba(20,13,8,0.55);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;
+}
+.overlay.show{opacity:1;pointer-events:auto;}
+.drawer{
+  position:fixed;top:0;right:0;height:100%;width:420px;max-width:92vw;background:var(--white);z-index:95;
+  transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;
+}
+.drawer.show{transform:translateX(0);}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;border-bottom:1px solid var(--line);}
+.drawer-head h3{font-size:19px;}
+.close-btn{background:none;border:none;padding:4px;}
+.close-btn svg{width:20px;height:20px;stroke:var(--ink);fill:none;stroke-width:1.6;}
+.drawer-body{flex:1;overflow-y:auto;padding:20px 24px;}
+.drawer-foot{padding:20px 24px;border-top:1px solid var(--line);}
+
+.cart-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);}
+.cart-item img{width:72px;height:72px;object-fit:cover;background:var(--panel);}
+.cart-item .ci-info{flex:1;display:flex;flex-direction:column;gap:4px;}
+.cart-item .ci-info .nm{font-family:'Fraunces',serif;font-size:15px;}
+.cart-item .ci-info .sub{font-size:11.5px;color:var(--ink-soft);}
+.qty-ctrl{display:flex;align-items:center;gap:10px;margin-top:4px;}
+.qty-ctrl button{width:22px;height:22px;border:1px solid var(--line);background:var(--bg);font-size:14px;line-height:1;}
+.qty-ctrl span{font-size:13px;min-width:14px;text-align:center;}
+.ci-remove{font-size:11px;color:var(--leather);text-decoration:underline;background:none;border:none;margin-top:4px;align-self:flex-start;}
+.cart-empty{text-align:center;padding:60px 10px;color:var(--ink-soft);}
+.cart-empty svg{width:44px;height:44px;stroke:var(--line);fill:none;stroke-width:1.2;margin-bottom:14px;}
+
+.gift-inline{
+  border:1px dashed var(--brass);background:var(--brass-soft);padding:14px 16px;margin:16px 0;font-size:12.5px;color:var(--leather-darker);
+}
+.gift-inline b{display:block;font-family:'Fraunces',serif;font-size:14px;margin-bottom:4px;}
+.gift-choice-row{display:flex;flex-direction:column;gap:8px;margin-top:10px;}
+.gift-choice-row label{
+  display:flex;align-items:center;gap:8px;padding:9px 10px;background:var(--white);border:1px solid var(--line);font-size:12.5px;cursor:pointer;
+}
+.gift-choice-row label.picked{border-color:var(--leather);background:#fff;}
+.summary-row{display:flex;justify-content:space-between;font-size:13.5px;padding:4px 0;color:var(--ink-soft);}
+.summary-row.total{font-size:17px;font-weight:800;color:var(--ink);padding-top:10px;border-top:1px solid var(--line);margin-top:8px;}
+
+.floating-cart{
+  position:fixed;bottom:26px;right:26px;z-index:70;background:var(--leather);color:var(--white);
+  border:none;border-radius:50px;padding:15px 22px 15px 18px;display:flex;align-items:center;gap:10px;
+  box-shadow:0 10px 30px rgba(45,29,18,0.35);font-weight:700;font-size:13px;letter-spacing:.03em;
+}
+.floating-cart svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.6;}
+.floating-cart .fc-badge{
+  background:var(--white);color:var(--leather);border-radius:50%;min-width:20px;height:20px;font-size:11px;
+  display:flex;align-items:center;justify-content:center;padding:0 4px;
+}
+
+/* modal (center) */
+.modal-wrap{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;pointer-events:none;}
+.modal-wrap.show{pointer-events:auto;}
+.modal{
+  background:var(--white);max-width:460px;width:100%;padding:38px 32px;position:relative;
+  transform:scale(.94) translateY(10px);opacity:0;transition:all .3s cubic-bezier(.4,0,.2,1);max-height:88vh;overflow-y:auto;
+}
+.modal-wrap.show .modal{transform:scale(1) translateY(0);opacity:1;}
+.modal .close-btn{position:absolute;top:14px;right:14px;}
+.modal .seal{
+  width:56px;height:56px;border-radius:50%;background:var(--leather-darker);display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+}
+.modal .seal svg{width:26px;height:26px;stroke:var(--brass);fill:none;stroke-width:1.4;}
+.modal h3{font-size:23px;margin-bottom:10px;}
+.modal p{color:var(--ink-soft);font-size:14px;margin-bottom:6px;}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(15,10,6,0.92);z-index:110;display:none;align-items:center;justify-content:center;padding:30px;}
+.lightbox.show{display:flex;}
+.lightbox img{max-width:90vw;max-height:85vh;object-fit:contain;}
+.lightbox .close-btn{position:absolute;top:22px;right:26px;}
+.lightbox .close-btn svg{stroke:var(--white);width:26px;height:26px;}
+
+.toast{
+  position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--white);
+  padding:14px 24px;font-size:13.5px;z-index:120;opacity:0;pointer-events:none;transition:all .3s ease;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* payment icons row */
+.pay-icons{display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap;}
+.pay-icons span{border:1px solid var(--line);padding:5px 9px;font-size:10.5px;font-weight:700;color:var(--ink-soft);letter-spacing:.03em;}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:900px){
+  .navlinks{display:none;}
+  .hamburger{display:block;}
+  .features{grid-template-columns:repeat(2,1fr);}
+  .footgrid{grid-template-columns:1fr 1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);}
+  .gallery-grid .g-item:first-child{grid-column:span 2;grid-row:span 1;}
+  .formrow{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .drawer{width:100%;}
+  .section{padding:64px 0;}
+  .floating-cart span.fc-label{display:none;}
+}
+.mobile-menu{
+  display:none;position:fixed;top:0;left:0;right:0;background:var(--bg);z-index:80;padding:90px 28px 40px;
+  height:100%;overflow-y:auto;
+}
+.mobile-menu.show{display:block;}
+.mobile-menu button{
+  display:block;width:100%;text-align:left;background:none;border:none;border-bottom:1px solid var(--line);
+  padding:18px 0;font-family:'Fraunces',serif;font-size:22px;color:var(--ink);
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site">
+  <div class="nav">
+    <div class="logo">EDGE <em>&</em> BEYOND</div>
+    <nav class="navlinks">
+      <button data-go="home" class="active">Home</button>
+      <button data-go="home" data-scroll="#shop">Shop</button>
+      <button data-go="gallery">Gallery</button>
+      <button data-go="info">Info</button>
+      <button data-go="track">Track Order</button>
+      <button data-go="contact">Contact</button>
+    </nav>
+    <div class="navicons">
+      <button class="icon-btn" id="wishBtn" aria-label="Wishlist">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.1C.5 8.6 2 5 5.6 5c2 0 3.5 1.1 4.4 2.6C10.9 6.1 12.4 5 14.4 5 18 5 19.5 8.6 18 11.9 15.5 16.4 12 21 12 21z"/></svg>
+        <span class="badge" id="wishBadge" style="display:none;">0</span>
+      </button>
+      <button class="icon-btn" id="cartBtnTop" aria-label="Cart">
+        <svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 12.4A2 2 0 0 0 9.4 18h7.2a2 2 0 0 0 2-1.6L20 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="17" cy="21" r="1"/></svg>
+        <span class="badge" id="cartBadgeTop" style="display:none;">0</span>
+      </button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button data-go="home" data-close-mobile>Home</button>
+  <button data-go="home" data-scroll="#shop" data-close-mobile>Shop</button>
+  <button data-go="gallery" data-close-mobile>Gallery</button>
+  <button data-go="info" data-close-mobile>Info &amp; FAQ</button>
+  <button data-go="track" data-close-mobile>Track Order</button>
+  <button data-go="contact" data-close-mobile>Contact</button>
+</div>
+
+<!-- ============ HOME PAGE ============ -->
+<main id="home" class="page active">
+
+  <section class="hero">
+    <img src="https://i.ibb.co/WwFG0h8/379-DDCF4-D353-400-E-BDB0-E8-D223-CA4-F83.png" alt="Edge & Beyond leather bag">
+    <div class="hero-content">
+      <span class="eyebrow">Handcrafted Leather · Est. Edge &amp; Beyond</span>
+      <h1>Best quality.<br><em>Best organised</em> bag.</h1>
+      <p class="sub">Every pocket has a purpose. Edge & Beyond bags are built from full-grain leather and designed so nothing you carry is ever misplaced again.</p>
+      <div class="btnrow">
+        <button class="btn btn-primary" id="shopNowBtn">Shop Now</button>
+        <button class="btn btn-ghost" data-go="gallery">View Gallery</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="features">
+        <div class="feature">
+          <svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6z"/></svg>
+          <h4>Full-Grain Leather</h4>
+          <p>Sourced and finished for a lifetime of daily use.</p>
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          <h4>Best Organised</h4>
+          <p>Dedicated compartments for tech, cards, and essentials.</p>
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 9h18"/></svg>
+          <h4>Free Shipping</h4>
+          <p>Free standard shipping on every order, everywhere.</p>
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          <h4>30-Day Returns</h4>
+          <p>Not the right fit? Return it unused within 30 days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="giftband">
+    <div class="wrap">
+      <div class="seal">
+        <svg viewBox="0 0 24 24"><path d="M20 12v9H4v-9"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7S9.5 2 6.5 2C4.6 2 4 3.4 4 4.5 4 6.5 6 7 6 7"/><path d="M12 7S14.5 2 17.5 2C19.4 2 20 3.4 20 4.5 20 6.5 18 7 18 7"/></svg>
+      </div>
+      <h3>A Gift Reserved For You</h3>
+      <p>You're among the first 50 customers to receive a free Foundation Kit worth £50. Buy your bag to unlock your free kit.</p>
+    </div>
+  </section>
+
+  <section class="section bg-panel" id="shop">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">The Collection</span>
+          <h2>Shop the bags</h2>
+        </div>
+        <p>Auto-scrolling carousel — hover to pause, or scroll manually.</p>
+      </div>
+      <div class="carousel-outer">
+        <div class="carousel" id="carousel"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">In Detail</span>
+          <h2>Crafted for the everyday</h2>
+        </div>
+        <button class="btn btn-outline" data-go="gallery">Open Full Gallery</button>
+      </div>
+      <div class="gallery-grid" id="homeGalleryPreview"></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ GALLERY PAGE ============ -->
+<section id="gallery" class="page">
+  <div class="wrap pagehero">
+    <span class="eyebrow">Product Gallery</span>
+    <h1>Every angle, every detail</h1>
+  </div>
+  <div class="wrap section tight">
+    <div class="gallery-grid" id="fullGallery"></div>
+  </div>
+</section>
+
+<!-- ============ INFO PAGE (FAQ / Shipping / Returns / Care / Privacy / Return Policy) ============ -->
+<section id="info" class="page">
+  <div class="wrap pagehero">
+    <span class="eyebrow">Good to Know</span>
+    <h1>Info &amp; Policies</h1>
+  </div>
+  <div class="wrap section tight">
+    <div class="tabbar" id="infoTabs">
+      <button data-tab="faq" class="active">FAQ</button>
+      <button data-tab="shipping">Shipping &amp; Delivery</button>
+      <button data-tab="returns">Returns &amp; Exchanges</button>
+      <button data-tab="care">Care Instructions</button>
+      <button data-tab="privacy">Privacy Policy</button>
+      <button data-tab="secure">Secure Payment</button>
+    </div>
+
+    <div class="tabpanel active" data-panel="faq">
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-item">
+        <div class="faq-q">What is Edge &amp; Beyond? <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.8"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        <div class="faq-a"><p>Edge & Beyond makes full-grain leather bags built around one idea: the best quality bag should also be the best organised. Every model is designed with dedicated compartments for your everyday essentials.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do I get my free Foundation Kit? <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.8"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        <div class="faq-a"><p>As one of our first 50 customers, add any bag to your cart and a gift selection screen will appear automatically, letting you choose your free Foundation Kit item — a leather pouch, a customised leather tag, or a customised leather keychain.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How does checkout work? <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.8"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        <div class="faq-a"><p>Add items to your cart, choose your free gift, then select "Send Order." Fill in your name, phone number and delivery address — your order is emailed directly to our team, who will confirm payment and delivery with you.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I change or cancel my order? <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.8"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        <div class="faq-a"><p>Yes — contact us within 12 hours of placing your order via our Contact page and we'll amend or cancel it before it ships.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is my payment secure? <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.8"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        <div class="faq-a"><p>Yes. All payments are processed through encrypted, PCI-compliant payment providers. We never store your card details on our servers. See "Secure Payment" for details.</p></div>
+      </div>
+    </div>
+
+    <div class="tabpanel" data-panel="shipping">
+      <h3>Shipping &amp; Delivery</h3>
+      <p>We offer free standard shipping on all orders. Wherever you are, we'll handle the shipping.</p>
+      <p>Standard delivery typically arrives within 5–7 working days after your order is confirmed. Once dispatched, you'll receive tracking details by email — you can also check progress any time on our Track Order page.</p>
+      <p>Express shipping options may be available at checkout for select locations.</p>
+    </div>
+
+    <div class="tabpanel" data-panel="returns">
+      <h3>Returns &amp; Exchanges</h3>
+      <p>Not completely satisfied? You can return your unused item within 30 days of delivery for a full refund. Refunds are processed to the original payment method once the returned item has been received and inspected.</p>
+      <p>To start a return or exchange, contact us via the Contact page with your order details, and we'll send you return instructions and a shipping label.</p>
+      <p>Items must be unused, in original condition, and with any tags or dust bags included.</p>
+    </div>
+
+    <div class="tabpanel" data-panel="care">
+      <h3>Care Instructions</h3>
+      <p>Clean your leather bag with a soft cloth and a suitable leather-safe cleaner. Avoid harsh chemicals, excessive moisture, and prolonged direct sunlight.</p>
+      <p>Store in a cool, dry place when not in use to preserve its appearance and structure.</p>
+    </div>
+
+    <div class="tabpanel" data-panel="privacy">
+      <h3>Privacy Policy</h3>
+      <p>Edge & Beyond collects only the information needed to process and deliver your order — your name, phone number, delivery address, and order details. This information is sent securely to our order inbox and is never sold or shared with third parties for marketing purposes.</p>
+      <p>Payment information is handled directly by our secure payment provider and is never stored on our website.</p>
+      <p>You may request a copy of, or the deletion of, any personal data we hold about you by contacting us via the Contact page.</p>
+    </div>
+
+    <div class="tabpanel" data-panel="secure">
+      <h3>Secure Payment</h3>
+      <p>All transactions are protected with industry-standard SSL encryption from the moment you enter your details to the moment your payment is processed.</p>
+      <p>We support the following secure payment methods:</p>
+      <div class="pay-icons">
+        <span>VISA</span><span>MASTERCARD</span><span>AMEX</span><span>PAYPAL</span><span>APPLE PAY</span><span>GOOGLE PAY</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRACK ORDER PAGE ============ -->
+<section id="track" class="page">
+  <div class="wrap pagehero">
+    <span class="eyebrow">Order Status</span>
+    <h1>Track Your Order</h1>
+  </div>
+  <div class="wrap section tight">
+    <div class="form-card">
+      <div class="field">
+        <label for="trackOrderId">Order Reference</label>
+        <input type="text" id="trackOrderId" placeholder="e.g. EB-10234">
+      </div>
+      <div class="field">
+        <label for="trackEmail">Email or Phone used at checkout</label>
+        <input type="text" id="trackEmail" placeholder="you@email.com">
+      </div>
+      <button class="btn btn-primary full" id="trackBtn">Track Order</button>
+      <p class="form-note">Your order reference was included in your confirmation email.</p>
+    </div>
+    <div class="track-result" id="trackResult">
+      <p style="font-weight:700;margin-bottom:4px;">Order <span id="trackRefOut"></span></p>
+      <p style="font-size:13px;color:var(--ink-soft);">Status updates are sent to the email/phone you provided at checkout.</p>
+      <div class="track-steps">
+        <div class="tstep done"><div class="dot"></div><span>Order Placed</span></div>
+        <div class="tstep done"><div class="dot"></div><span>Confirmed</span></div>
+        <div class="tstep"><div class="dot"></div><span>Shipped</span></div>
+        <div class="tstep"><div class="dot"></div><span>Delivered</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT PAGE ============ -->
+<section id="contact" class="page">
+  <div class="wrap pagehero">
+    <span class="eyebrow">We're Here to Help</span>
+    <h1>Contact Us</h1>
+  </div>
+  <div class="wrap section tight">
+    <div class="contact-grid">
+      <div class="form-card" style="margin:0;">
+        <div class="field">
+          <label for="cName">Name</label>
+          <input type="text" id="cName" placeholder="Your full name">
+        </div>
+        <div class="field">
+          <label for="cEmail">Email</label>
+          <input type="email" id="cEmail" placeholder="you@email.com">
+        </div>
+        <div class="field">
+          <label for="cMsg">Message</label>
+          <textarea id="cMsg" placeholder="How can we help?"></textarea>
+        </div>
+        <button class="btn btn-primary full" id="contactSendBtn">Send Message</button>
+        <div class="status-msg" id="contactStatus"></div>
+      </div>
+      <div class="contact-info">
+        <div class="ci-row">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+          <div><h4>Email</h4><p>edgeandbeyond.EandB@gmail.com</p></div>
+        </div>
+        <div class="ci-row">
+          <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
+          <div><h4>Response Time</h4><p>We reply within 24 hours, Mon–Sat.</p></div>
+        </div>
+        <div class="ci-row">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><h4>Shipping</h4><p>Free standard shipping, worldwide.</p></div>
+        </div>
+        <div class="ci-row">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          <div><h4>Returns</h4><p>30-day unused returns for a full refund.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footgrid">
+      <div>
+        <div class="flogo">EDGE &amp; BEYOND</div>
+        <p style="font-size:13px;max-width:260px;">Best quality. Best organised. Full-grain leather bags, made to carry your everyday beautifully.</p>
+      </div>
+      <div>
+        <h5>Shop</h5>
+        <ul>
+          <li><button data-go="home" data-scroll="#shop">All Bags</button></li>
+          <li><button data-go="gallery">Gallery</button></li>
+          <li><button data-go="home" data-open="wishlist">Wishlist</button></li>
+          <li><button data-go="home" data-open="cart">Cart</button></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Support</h5>
+        <ul>
+          <li><button data-go="info" data-tab="faq">FAQ</button></li>
+          <li><button data-go="info" data-tab="shipping">Shipping &amp; Delivery</button></li>
+          <li><button data-go="info" data-tab="returns">Returns &amp; Exchanges</button></li>
+          <li><button data-go="info" data-tab="care">Care Instructions</button></li>
+          <li><button data-go="track">Track Order</button></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><button data-go="contact">Contact Us</button></li>
+          <li><button data-go="info" data-tab="privacy">Privacy Policy</button></li>
+          <li><button data-go="info" data-tab="secure">Secure Payment</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footbottom">
+      <span>&copy; <span id="year"></span> Edge &amp; Beyond. All rights reserved.</span>
+      <span>edgeandbeyond.EandB@gmail.com</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING CART BUTTON ============ -->
+<button class="floating-cart" id="floatingCart">
+  <svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 12.4A2 2 0 0 0 9.4 18h7.2a2 2 0 0 0 2-1.6L20 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="17" cy="21" r="1"/></svg>
+  <span class="fc-label">Cart</span>
+  <span class="fc-badge" id="fcBadge">0</span>
+</button>
+
+<!-- ============ OVERLAY ============ -->
+<div class="overlay" id="overlay"></div>
+
+<!-- ============ WISHLIST DRAWER ============ -->
+<div class="drawer" id="wishlistDrawer">
+  <div class="drawer-head">
+    <h3>Wishlist</h3>
+    <button class="close-btn" data-close><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <div class="drawer-body" id="wishlistBody"></div>
+</div>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="drawer" id="cartDrawer">
+  <div class="drawer-head">
+    <h3>Your Cart</h3>
+    <button class="close-btn" data-close><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <div class="drawer-body">
+    <div id="cartBody"></div>
+    <div class="gift-inline" id="giftInlineBox" style="display:none;">
+      <b>🎁 Your Foundation Kit Gift</b>
+      <span id="giftInlineText">Selected: —</span>
+      <button class="btn small btn-outline" style="margin-top:10px;" id="changeGiftBtn">Change Gift</button>
+    </div>
+  </div>
+  <div class="drawer-foot">
+    <div class="summary-row"><span>Subtotal</span><span id="cartSubtotal">£0.00</span></div>
+    <div class="summary-row"><span>Shipping</span><span>Free</span></div>
+    <div class="summary-row"><span>Gift</span><span>Free Foundation Kit</span></div>
+    <div class="summary-row total"><span>Total</span><span id="cartTotal">£0.00</span></div>
+    <button class="btn btn-dark full" style="margin-top:16px;" id="goCheckoutBtn">Checkout &amp; Send Order</button>
+    <button class="btn btn-outline full" style="margin-top:10px;" id="buyNowFromCartBtn">Buy Now</button>
+  </div>
+</div>
+
+<!-- ============ CHECKOUT DRAWER ============ -->
+<div class="drawer" id="checkoutDrawer">
+  <div class="drawer-head">
+    <h3>Checkout</h3>
+    <button class="close-btn" data-close><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <div class="drawer-body">
+    <form id="checkoutForm">
+      <div class="field">
+        <label for="chkName">Full Name *</label>
+        <input type="text" id="chkName" required placeholder="Jane Doe">
+      </div>
+      <div class="field">
+        <label for="chkPhone">Phone Number *</label>
+        <input type="tel" id="chkPhone" required placeholder="+44 7000 000000">
+      </div>
+      <div class="field">
+        <label for="chkEmail">Email</label>
+        <input type="email" id="chkEmail" placeholder="you@email.com">
+      </div>
+      <div class="field">
+        <label for="chkAddress">Delivery Address *</label>
+        <textarea id="chkAddress" required placeholder="Street, City, Postcode, Country"></textarea>
+      </div>
+      <div class="field">
+        <label for="chkNotes">Order Notes (optional)</label>
+        <textarea id="chkNotes" placeholder="Anything we should know?"></textarea>
+      </div>
+      <div class="stitch" style="margin:20px 0;"></div>
+      <p style="font-size:12.5px;color:var(--ink-soft);margin-bottom:10px;">Order Summary</p>
+      <div id="checkoutSummary"></div>
+      <div class="summary-row total"><span>Total</span><span id="checkoutTotal">£0.00</span></div>
+      <div class="pay-icons" style="margin:14px 0 4px;">
+        <span>VISA</span><span>MASTERCARD</span><span>PAYPAL</span><span>APPLE PAY</span>
+      </div>
+      <p style="font-size:11.5px;color:var(--ink-soft);margin-bottom:16px;">🔒 Secure checkout — payment is confirmed directly with our team after order review.</p>
+      <button type="submit" class="btn btn-primary full" id="sendOrderBtn">Send Order</button>
+      <div class="status-msg" id="checkoutStatus"></div>
+    </form>
+  </div>
+</div>
+
+<!-- ============ PROMO POPUP (first 50 customers) ============ -->
+<div class="modal-wrap" id="promoModalWrap">
+  <div class="modal">
+    <button class="close-btn" data-close><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="seal">
+      <svg viewBox="0 0 24 24"><path d="M20 12v9H4v-9"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7S9.5 2 6.5 2C4.6 2 4 3.4 4 4.5 4 6.5 6 7 6 7"/><path d="M12 7S14.5 2 17.5 2C19.4 2 20 3.4 20 4.5 20 6.5 18 7 18 7"/></svg>
+    </div>
+    <span class="eyebrow">Exclusive Offer</span>
+    <h3 style="margin-top:8px;">You're one of our first 50 customers</h3>
+    <p>You've been selected to receive a <b>free Foundation Kit worth £50</b> — simply buy your bag to claim it.</p>
+    <button class="btn btn-primary full" style="margin-top:20px;" id="promoShopBtn">Shop Now &amp; Claim</button>
+  </div>
+</div>
+
+<!-- ============ GIFT CLAIM MODAL (after adding bag to cart) ============ -->
+<div class="modal-wrap" id="giftModalWrap">
+  <div class="modal">
+    <button class="close-btn" data-close><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="seal">
+      <svg viewBox="0 0 24 24"><path d="M20 12v9H4v-9"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7S9.5 2 6.5 2C4.6 2 4 3.4 4 4.5 4 6.5 6 7 6 7"/><path d="M12 7S14.5 2 17.5 2C19.4 2 20 3.4 20 4.5 20 6.5 18 7 18 7"/></svg>
+    </div>
+    <span class="eyebrow">Gift Unlocked</span>
+    <h3 style="margin-top:8px;">Choose your free Foundation Kit</h3>
+    <p>Your bag has unlocked a free gift worth £50. Pick one to add to your order:</p>
+    <div class="gift-choice-row" id="giftOptions">
+      <label><input type="radio" name="giftOpt" value="Leather Pouch"> Leather Pouch</label>
+      <label><input type="radio" name="giftOpt" value="Customised Leather Tag"> Customised Leather Tag</label>
+      <label><input type="radio" name="giftOpt" value="Customised Leather Keychain"> Customised Leather Keychain</label>
+    </div>
+    <button class="btn btn-primary full" style="margin-top:20px;" id="confirmGiftBtn">Confirm Gift</button>
+  </div>
+</div>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox">
+  <button class="close-btn" data-close><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img id="lightboxImg" src="" alt="Product detail">
+</div>
+
+<!-- ============ TOAST ============ -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* =========================================================
+   EMAILJS CONFIG — replace with your own free EmailJS account
+   1. Create a free account at https://www.emailjs.com
+   2. Add an Email Service (e.g. Gmail) connected to edgeandbeyond.EandB@gmail.com
+   3. Create an Email Template with variables:
+      {{customer_name}} {{customer_phone}} {{customer_email}} {{customer_address}}
+      {{order_items}} {{gift_choice}} {{order_total}} {{order_notes}} {{order_date}}
+   4. Paste your Public Key, Service ID and Template ID below.
+========================================================= */
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+const OWNER_EMAIL = "edgeandbeyond.EandB@gmail.com";
+
+try{ if(window.emailjs){ emailjs.init({publicKey: EMAILJS_PUBLIC_KEY}); } }catch(e){}
+
+/* ================= PRODUCT DATA ================= */
+const MAIN_IMG = "https://i.ibb.co/XfLtw4LB/45-BB3-A59-6487-44-EE-92-BC-3-B74248-D7-CDD.png";
+const GALLERY_IMGS = [
+  "https://i.ibb.co/kVDnx7BJ/AAA6-D960-FF7-E-4285-8213-741162-AEC56-B.png",
+  "https://i.ibb.co/0pHzHKbV/IMG-4329.jpg",
+  "https://i.ibb.co/YFwr3pvn/7-DBB4312-4-C3-F-42-BE-B69-C-61-A6146-EC327.png",
+  "https://i.ibb.co/xShGy0rd/AB781-BDE-240-F-478-D-9-A57-F7-FB8-C4-FAAEA.png"
+];
+
+const PRODUCTS = [
+  {id:"eb-onyx", name:"Onyx Tote", desc:"Best-organised everyday tote in deep black leather.", price:189, img: MAIN_IMG},
+  {id:"eb-cognac", name:"Cognac Carry-All", desc:"Warm cognac leather with structured compartments.", price:209, img: MAIN_IMG},
+  {id:"eb-espresso", name:"Espresso Edge Bag", desc:"Rich espresso-brown, our signature silhouette.", price:199, img: MAIN_IMG},
+  {id:"eb-ivory", name:"Ivory Beyond Bag", desc:"Soft ivory leather for a refined everyday look.", price:219, img: MAIN_IMG},
+  {id:"eb-mini", name:"Mini Edge Crossbody", desc:"Compact organisation, full-grain leather.", price:149, img: MAIN_IMG}
+];
+
+const GIFT_LABELS = {
+  "Leather Pouch":"Leather Pouch",
+  "Customised Leather Tag":"Customised Leather Tag",
+  "Customised Leather Keychain":"Customised Leather Keychain"
+};
+
+/* ================= STATE (in-memory only, no localStorage) ================= */
+let cart = [];       // {id, name, price, img, qty}
+let wishlist = [];   // product ids
+let selectedGift = null;
+let giftPromptShown = false;
+
+/* ================= UTILITIES ================= */
+const $ = (sel, ctx=document) => ctx.querySelector(sel);
+const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
+const fmt = n => "£" + n.toFixed(2);
+
+function toast(msg){
+  const t = $("#toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(t._timer);
+  t._timer = setTimeout(()=>t.classList.remove("show"), 2600);
+}
+
+/* ================= RENDER PRODUCTS ================= */
+function productCardHTML(p){
+  const wished = wishlist.includes(p.id);
+  return `
+  <div class="card" data-id="${p.id}">
+    <div class="imgwrap">
+      <img src="${p.img}" alt="${p.name}" loading="lazy">
+      <button class="wish-toggle ${wished?'active':''}" data-wish="${p.id}" aria-label="Toggle wishlist">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.1C.5 8.6 2 5 5.6 5c2 0 3.5 1.1 4.4 2.6C10.9 6.1 12.4 5 14.4 5 18 5 19.5 8.6 18 11.9 15.5 16.4 12 21 12 21z"/></svg>
+      </button>
+    </div>
+    <div class="body">
+      <div class="name">${p.name}</div>
+      <div class="desc">${p.desc}</div>
+      <div class="pricerow"><span class="price">${fmt(p.price)}</span></div>
+      <div class="cardbtns">
+        <button class="btn btn-outline" data-addcart="${p.id}">Add to Cart</button>
+        <button class="btn btn-primary" data-buynow="${p.id}">Buy Now</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderCarousel(){
+  $("#carousel").innerHTML = PRODUCTS.map(productCardHTML).join("");
+}
+
+function renderGalleries(){
+  const full = GALLERY_IMGS.map((src,i)=>`<div class="g-item" data-img="${src}"><img src="${src}" alt="Edge & Beyond gallery image ${i+1}" loading="lazy"></div>`).join("");
+  $("#fullGallery").innerHTML = full;
+  $("#homeGalleryPreview").innerHTML = full;
+}
+
+/* ================= WISHLIST ================= */
+function toggleWish(id){
+  const idx = wishlist.indexOf(id);
+  if(idx>-1){ wishlist.splice(idx,1); toast("Removed from wishlist"); }
+  else{ wishlist.push(id); toast("Added to wishlist"); }
+  renderCarousel();
+  renderWishlistDrawer();
+  updateBadges();
+}
+
+function renderWishlistDrawer(){
+  const body = $("#wishlistBody");
+  if(wishlist.length===0){
+    body.innerHTML = `<div class="cart-empty"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.1C.5 8.6 2 5 5.6 5c2 0 3.5 1.1 4.4 2.6C10.9 6.1 12.4 5 14.4 5 18 5 19.5 8.6 18 11.9 15.5 16.4 12 21 12 21z"/></svg><p>Your wishlist is empty.<br>Tap the heart on any bag to save it.</p></div>`;
+    return;
+  }
+  body.innerHTML = wishlist.map(id=>{
+    const p = PRODUCTS.find(x=>x.id===id);
+    if(!p) return "";
+    return `<div class="cart-item">
+      <img src="${p.img}" alt="${p.name}">
+      <div class="ci-info">
+        <div class="nm">${p.name}</div>
+        <div class="sub">${fmt(p.price)}</div>
+        <div style="display:flex;gap:10px;margin-top:8px;">
+          <button class="btn small btn-primary" data-addcart="${p.id}">Add to Cart</button>
+          <button class="ci-remove" data-wish="${p.id}">Remove</button>
+        </div>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+/* ================= CART ================= */
+function addToCart(id, qty=1){
+  const p = PRODUCTS.find(x=>x.id===id);
+  if(!p) return;
+  const existing = cart.find(c=>c.id===id);
+  if(existing){ existing.qty += qty; }
+  else{ cart.push({id:p.id, name:p.name, price:p.price, img:p.img, qty}); }
+  updateBadges();
+  renderCartDrawer();
+  toast(p.name + " added to cart");
+  if(!giftPromptShown){
+    giftPromptShown = true;
+    setTimeout(()=>openModal("giftModalWrap"), 500);
+  }
+}
+
+function removeFromCart(id){
+  cart = cart.filter(c=>c.id!==id);
+  updateBadges();
+  renderCartDrawer();
+}
+
+function changeQty(id, delta){
+  const c = cart.find(c=>c.id===id);
+  if(!c) return;
+  c.qty += delta;
+  if(c.qty<=0){ removeFromCart(id); return; }
+  updateBadges();
+  renderCartDrawer();
+}
+
+function cartSubtotal(){
+  return cart.reduce((sum,c)=>sum + c.price*c.qty, 0);
+}
+
+function updateBadges(){
+  const count = cart.reduce((s,c)=>s+c.qty,0);
+  $("#fcBadge").textContent = count;
+  const topBadge = $("#cartBadgeTop");
+  topBadge.textContent = count;
+  topBadge.style.display = count>0 ? "flex" : "none";
+  const wishBadge = $("#wishBadge");
+  wishBadge.textContent = wishlist.length;
+  wishBadge.style.display = wishlist.length>0 ? "flex" : "none";
+}
+
+function renderCartDrawer(){
+  const body = $("#cartBody");
+  if(cart.length===0){
+    body.innerHTML = `<div class="cart-empty"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 12.4A2 2 0 0 0 9.4 18h7.2a2 2 0 0 0 2-1.6L20 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="17" cy="21" r="1"/></svg><p>Your cart is empty.<br>Add a bag to get started.</p></div>`;
+    $("#giftInlineBox").style.display = "none";
+  }else{
+    body.innerHTML = cart.map(c=>`
+      <div class="cart-item">
+        <img src="${c.img}" alt="${c.name}">
+        <div class="ci-info">
+          <div class="nm">${c.name}</div>
+          <div class="sub">${fmt(c.price)} each</div>
+          <div class="qty-ctrl">
+            <button data-qty-minus="${c.id}">−</button>
+            <span>${c.qty}</span>
+            <button data-qty-plus="${c.id}">+</button>
+          </div>
+          <button class="ci-remove" data-remove="${c.id}">Remove</button>
+        </div>
+      </div>`).join("");
+    $("#giftInlineBox").style.display = selectedGift ? "block" : "none";
+    $("#giftInlineText").textContent = "Selected: " + (selectedGift||"—");
+  }
+  const sub = cartSubtotal();
+  $("#cartSubtotal").textContent = fmt(sub);
+  $("#cartTotal").textContent = fmt(sub);
+}
+
+function renderCheckoutSummary(){
+  const box = $("#checkoutSummary");
+  box.innerHTML = cart.map(c=>`<div class="summary-row"><span>${c.name} × ${c.qty}</span><span>${fmt(c.price*c.qty)}</span></div>`).join("")
+    + (selectedGift ? `<div class="summary-row"><span>Free Gift</span><span>${selectedGift}</span></div>` : "");
+  $("#checkoutTotal").textContent = fmt(cartSubtotal());
+}
+
+/* ================= DRAWERS / MODALS ================= */
+function openDrawer(id){
+  $("#overlay").classList.add("show");
+  $("#"+id).classList.add("show");
+}
+function closeAllDrawers(){
+  $$(".drawer").forEach(d=>d.classList.remove("show"));
+  $("#overlay").classList.remove("show");
+}
+function openModal(id){
+  $("#"+id).classList.add("show");
+  $("#overlay").classList.add("show");
+}
+function closeAllModals(){
+  $$(".modal-wrap").forEach(m=>m.classList.remove("show"));
+  if(!$$(".drawer.show").length) $("#overlay").classList.remove("show");
+}
+
+$("#overlay").addEventListener("click", ()=>{ closeAllDrawers(); closeAllModals(); });
+$$("[data-close]").forEach(btn=>btn.addEventListener("click", ()=>{ closeAllDrawers(); closeAllModals(); $("#lightbox").classList.remove("show"); }));
+
+/* ================= SPA ROUTING ================= */
+function goPage(name){
+  $$(".page").forEach(p=>p.classList.remove("active"));
+  const target = document.getElementById(name);
+  if(target) target.classList.add("active");
+  $$(".navlinks button").forEach(b=>b.classList.toggle("active", b.dataset.go===name && !b.dataset.scroll));
+  window.scrollTo({top:0, behavior:"instant" in window ? "instant":"auto"});
+  $("#mobileMenu").classList.remove("show");
+}
+
+document.addEventListener("click", (e)=>{
+  const goBtn = e.target.closest("[data-go]");
+  if(goBtn){
+    goPage(goBtn.dataset.go);
+    if(goBtn.dataset.tab){ activateTab(goBtn.dataset.tab); }
+    if(goBtn.dataset.open==="wishlist"){ renderWishlistDrawer(); openDrawer("wishlistDrawer"); }
+    if(goBtn.dataset.open==="cart"){ renderCartDrawer(); openDrawer("cartDrawer"); }
+    if(goBtn.dataset.scroll){
+      setTimeout(()=>{ const el = document.querySelector(goBtn.dataset.scroll); if(el) el.scrollIntoView({behavior:"smooth"}); }, 60);
+    }
+  }
+});
+
+$("#shopNowBtn").addEventListener("click", ()=>{
+  document.querySelector("#shop").scrollIntoView({behavior:"smooth"});
+});
+$("#promoShopBtn").addEventListener("click", ()=>{
+  closeAllModals();
+  document.querySelector("#shop").scrollIntoView({behavior:"smooth"});
+});
+
+/* mobile menu */
+$("#hamburgerBtn").addEventListener("click", ()=> $("#mobileMenu").classList.toggle("show"));
+
+/* ================= INFO TABS ================= */
+function activateTab(tab){
+  $$("#infoTabs button").forEach(b=>b.classList.toggle("active", b.dataset.tab===tab));
+  $$(".tabpanel").forEach(p=>p.classList.toggle("active", p.dataset.panel===tab));
+}
+$("#infoTabs").addEventListener("click", e=>{
+  const btn = e.target.closest("button");
+  if(btn) activateTab(btn.dataset.tab);
+});
+
+/* FAQ accordion */
+document.addEventListener("click", e=>{
+  const q = e.target.closest(".faq-q");
+  if(q){ q.parentElement.classList.toggle("open"); }
+});
+
+/* ================= EVENT DELEGATION: product actions ================= */
+document.addEventListener("click", e=>{
+  const wishEl = e.target.closest("[data-wish]");
+  if(wishEl){ toggleWish(wishEl.dataset.wish); return; }
+
+  const addEl = e.target.closest("[data-addcart]");
+  if(addEl){ addToCart(addEl.dataset.addcart); return; }
+
+  const buyEl = e.target.closest("[data-buynow]");
+  if(buyEl){
+    addToCart(buyEl.dataset.buynow);
+    setTimeout(()=>{ renderCartDrawer(); openDrawer("cartDrawer"); }, giftPromptShown && selectedGift===null ? 0 : 0);
+    return;
+  }
+
+  const qMinus = e.target.closest("[data-qty-minus]");
+  if(qMinus){ changeQty(qMinus.dataset.qtyMinus,-1); return; }
+  const qPlus = e.target.closest("[data-qty-plus]");
+  if(qPlus){ changeQty(qPlus.dataset.qtyPlus,1); return; }
+  const rem = e.target.closest("[data-remove]");
+  if(rem){ removeFromCart(rem.dataset.remove); return; }
+
+  const gItem = e.target.closest(".g-item");
+  if(gItem){ $("#lightboxImg").src = gItem.dataset.img; $("#lightbox").classList.add("show"); return; }
+});
+
+/* ================= CART / WISHLIST ICON BUTTONS ================= */
+$("#cartBtnTop").addEventListener("click", ()=>{ renderCartDrawer(); openDrawer("cartDrawer"); });
+$("#floatingCart").addEventListener("click", ()=>{ renderCartDrawer(); openDrawer("cartDrawer"); });
+$("#wishBtn").addEventListener("click", ()=>{ renderWishlistDrawer(); openDrawer("wishlistDrawer"); });
+
+$("#goCheckoutBtn").addEventListener("click", ()=>{
+  if(cart.length===0){ toast("Your cart is empty"); return; }
+  closeAllDrawers();
+  renderCheckoutSummary();
+  openDrawer("checkoutDrawer");
+});
+$("#buyNowFromCartBtn").addEventListener("click", ()=>{
+  if(cart.length===0){ toast("Your cart is empty"); return; }
+  closeAllDrawers();
+  renderCheckoutSummary();
+  openDrawer("checkoutDrawer");
+});
+
+/* ================= GIFT CLAIM MODAL ================= */
+$("#giftOptions").addEventListener("change", e=>{
+  $$("#giftOptions label").forEach(l=>l.classList.remove("picked"));
+  e.target.closest("label").classList.add("picked");
+});
+$("#confirmGiftBtn").addEventListener("click", ()=>{
+  const chosen = document.querySelector('input[name="giftOpt"]:checked');
+  if(!chosen){ toast("Please select a gift"); return; }
+  selectedGift = chosen.value;
+  closeAllModals();
+  toast("Gift added: " + selectedGift);
+  renderCartDrawer();
+  openDrawer("cartDrawer");
+});
+$("#changeGiftBtn").addEventListener("click", ()=>{
+  closeAllDrawers();
+  openModal("giftModalWrap");
+});
+
+/* ================= PROMO POPUP ON LOAD ================= */
+window.addEventListener("load", ()=>{
+  setTimeout(()=>openModal("promoModalWrap"), 1400);
+});
+
+/* ================= CHECKOUT / SEND ORDER ================= */
+$("#checkoutForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  if(cart.length===0){ toast("Your cart is empty"); return; }
+
+  const name = $("#chkName").value.trim();
+  const phone = $("#chkPhone").value.trim();
+  const email = $("#chkEmail").value.trim();
+  const address = $("#chkAddress").value.trim();
+  const notes = $("#chkNotes").value.trim();
+
+  if(!name || !phone || !address){ toast("Please fill in all required fields"); return; }
+
+  const itemsText = cart.map(c=>`${c.name} × ${c.qty} — ${fmt(c.price*c.qty)}`).join("\\n")
+    + (selectedGift ? `\\nFREE GIFT (Foundation Kit): ${selectedGift}` : "\\nFREE GIFT (Foundation Kit): Not yet selected");
+
+  const total = fmt(cartSubtotal());
+  const btn = $("#sendOrderBtn");
+  const statusEl = $("#checkoutStatus");
+  btn.disabled = true;
+  btn.textContent = "Sending...";
+
+  const templateParams = {
+    to_email: OWNER_EMAIL,
+    customer_name: name,
+    customer_phone: phone,
+    customer_email: email || "Not provided",
+    customer_address: address,
+    order_items: itemsText,
+    gift_choice: selectedGift || "Not yet selected",
+    order_total: total,
+    order_notes: notes || "None",
+    order_date: new Date().toLocaleString()
+  };
+
+  function onSuccess(){
+    statusEl.className = "status-msg show ok";
+    statusEl.textContent = "Order sent! We'll contact you shortly at " + phone + " to confirm.";
+    toast("Order sent successfully");
+    cart = [];
+    selectedGift = null;
+    giftPromptShown = false;
+    updateBadges();
+    renderCartDrawer();
+    this && this.reset && this.reset();
+    btn.disabled = false;
+    btn.textContent = "Send Order";
+  }
+
+  function onFail(err){
+    // Fallback: open a pre-filled mailto so the order still reaches the owner
+    statusEl.className = "status-msg show err";
+    statusEl.textContent = "Could not send automatically — opening your email app as a backup.";
+    const body = encodeURIComponent(
+      `Customer Name: ${name}\\nPhone: ${phone}\\nEmail: ${email||"—"}\\nAddress: ${address}\\n\\nOrder Items:\\n${itemsText}\\n\\nTotal: ${total}\\nNotes: ${notes||"—"}`
+    );
+    window.open(`mailto:${OWNER_EMAIL}?subject=${encodeURIComponent("New Order — Edge & Beyond")}&body=${body}`, "_blank");
+    btn.disabled = false;
+    btn.textContent = "Send Order";
+  }
+
+  if(window.emailjs && EMAILJS_SERVICE_ID !== "YOUR_SERVICE_ID"){
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+      .then(onSuccess.bind(this))
+      .catch(onFail);
+  }else{
+    // EmailJS not configured yet — use mailto fallback directly
+    onFail();
+    setTimeout(()=>{
+      cart = [];
+      selectedGift = null;
+      giftPromptShown = false;
+      updateBadges();
+      renderCartDrawer();
+    }, 800);
+  }
+});
+
+/* ================= CONTACT FORM ================= */
+$("#contactSendBtn").addEventListener("click", ()=>{
+  const name = $("#cName").value.trim();
+  const email = $("#cEmail").value.trim();
+  const msg = $("#cMsg").value.trim();
+  const statusEl = $("#contactStatus");
+  if(!name || !email || !msg){
+    statusEl.className = "status-msg show err";
+    statusEl.textContent = "Please fill in all fields.";
+    return;
+  }
+  const body = encodeURIComponent(`Name: ${name}\\nEmail: ${email}\\n\\nMessage:\\n${msg}`);
+  window.open(`mailto:${OWNER_EMAIL}?subject=${encodeURIComponent("Website Contact — Edge & Beyond")}&body=${body}`, "_blank");
+  statusEl.className = "status-msg show ok";
+  statusEl.textContent = "Opening your email app to send this message...";
+  $("#cName").value = ""; $("#cEmail").value=""; $("#cMsg").value="";
+});
+
+/* ================= TRACK ORDER (front-end demo lookup) ================= */
+$("#trackBtn").addEventListener("click", ()=>{
+  const id = $("#trackOrderId").value.trim();
+  if(!id){ toast("Enter your order reference"); return; }
+  $("#trackRefOut").textContent = id;
+  $("#trackResult").classList.add("show");
+});
+
+/* ================= AUTO-SLIDING CAROUSEL ================= */
+let autoSlideTimer = null;
+function startAutoSlide(){
+  const el = $("#carousel");
+  autoSlideTimer = setInterval(()=>{
+    if(!el) return;
+    const cardWidth = 302;
+    if(el.scrollLeft + el.clientWidth >= el.scrollWidth - 5){
+      el.scrollTo({left:0, behavior:"smooth"});
+    }else{
+      el.scrollBy({left:cardWidth, behavior:"smooth"});
+    }
+  }, 3200);
+}
+function stopAutoSlide(){ clearInterval(autoSlideTimer); }
+
+/* ================= INIT ================= */
+function init(){
+  renderCarousel();
+  renderGalleries();
+  renderCartDrawer();
+  renderWishlistDrawer();
+  updateBadges();
+  $("#year").textContent = new Date().getFullYear();
+  startAutoSlide();
+  $("#carousel").addEventListener("mouseenter", stopAutoSlide);
+  $("#carousel").addEventListener("mouseleave", startAutoSlide);
+  $("#carousel").addEventListener("touchstart", stopAutoSlide, {passive:true});
+}
+init();
+</script>
+</body>
+</html>
