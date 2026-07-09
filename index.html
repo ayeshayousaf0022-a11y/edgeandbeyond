@@ -1205,8 +1205,8 @@ $("#checkoutForm").addEventListener("submit", function(e){
 
   if(!name || !phone || !address){ toast("Please fill in all required fields"); return; }
 
-  const itemsText = cart.map(c=>`${c.name} × ${c.qty} — ${fmt(c.price*c.qty)}`).join("\\n")
-    + (selectedGift ? `\\nFREE GIFT (Foundation Kit): ${selectedGift}` : "\\nFREE GIFT (Foundation Kit): Not yet selected");
+  const itemsText = cart.map(c=>`${c.name} × ${c.qty} — ${fmt(c.price*c.qty)}`).join("\n")
+    + (selectedGift ? `\nFREE GIFT (Foundation Kit): ${selectedGift}` : "\nFREE GIFT (Foundation Kit): Not yet selected");
 
   const total = fmt(cartSubtotal());
   const btn = $("#sendOrderBtn");
@@ -1246,7 +1246,7 @@ $("#checkoutForm").addEventListener("submit", function(e){
     statusEl.className = "status-msg show err";
     statusEl.textContent = "Could not send automatically — opening your email app as a backup.";
     const body = encodeURIComponent(
-      `Customer Name: ${name}\\nPhone: ${phone}\\nEmail: ${email||"—"}\\nAddress: ${address}\\n\\nOrder Items:\\n${itemsText}\\n\\nTotal: ${total}\\nNotes: ${notes||"—"}`
+      `Customer Name: ${name}\nPhone: ${phone}\nEmail: ${email||"—"}\nAddress: ${address}\n\nOrder Items:\n${itemsText}\n\nTotal: ${total}\nNotes: ${notes||"—"}`
     );
     window.open(`mailto:${OWNER_EMAIL}?subject=${encodeURIComponent("New Order — Edge & Beyond")}&body=${body}`, "_blank");
     btn.disabled = false;
@@ -1281,7 +1281,7 @@ $("#contactSendBtn").addEventListener("click", ()=>{
     statusEl.textContent = "Please fill in all fields.";
     return;
   }
-  const body = encodeURIComponent(`Name: ${name}\\nEmail: ${email}\\n\\nMessage:\\n${msg}`);
+  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${msg}`);
   window.open(`mailto:${OWNER_EMAIL}?subject=${encodeURIComponent("Website Contact — Edge & Beyond")}&body=${body}`, "_blank");
   statusEl.className = "status-msg show ok";
   statusEl.textContent = "Opening your email app to send this message...";
